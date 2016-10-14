@@ -134,7 +134,11 @@ uniq(names, function(uniqArr){
 
 
     //Code Here for each
-
+    var each = function(names, cb) {
+      for (var i = 0; i < names.length; i++) {
+        cb(names[i], i);
+      }
+    }
 
 
 each(names, function(item, indice){
@@ -173,6 +177,14 @@ var users = [
     address: '192 East 32 North'
   },
 ];
+
+var getUserById = function(users, id, cb) {
+  for (i = 0; i < users.length; i++) {
+    if (id === users[i].id) {
+      cb(users[i]);
+    }
+  }
+}
 
 getUserById(users, '16t', function(user){
   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address);
