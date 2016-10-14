@@ -45,6 +45,9 @@ first(names, function(firstName){
 
 
   //Code Here for last
+var last = function(names, cb) {
+  cb(names[names.length - 1]);
+}
 
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
