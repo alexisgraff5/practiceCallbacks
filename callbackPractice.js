@@ -29,8 +29,8 @@ and what you should write is the sayHi function that makes the code above work,
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
-var first = function(names, cb) {
-  cb(names[0]);
+var first = function(arr, cb) {
+  cb(arr[0]);
 }
 
 first(names, function(firstName){
@@ -45,8 +45,8 @@ first(names, function(firstName){
 
 
   //Code Here for last
-var last = function(names, cb) {
-  cb(names[names.length - 1]);
+var last = function(arr, cb) {
+  cb(arr[arr.length - 1]);
 }
 
 last(names, function(lastName){
@@ -86,8 +86,8 @@ multiply(4, 3, function(answer){
 
   //Code Here for contains
 
-var contains = function(names, str, cb){
-  cb(names.includes(str));
+var contains = function(arr, str, cb){
+  cb(arr.includes(str));
 }
 
 contains(names, 'Colt', function(result){
@@ -108,13 +108,13 @@ contains(names, 'Colt', function(result){
 
 
     //Code Here for uniq
-var uniq = function(names, cb) {
+var uniq = function(arr, cb) {
   var uniqArr = [];
-  for (var i = 0; i < names.length; i++) {
-    if (uniqArr.indexOf(names[i]) > -1) {
+  for (var i = 0; i < arr.length; i++) {
+    if (uniqArr.indexOf(arr[i]) > -1) {
 
     } else {
-      uniqArr.push(names[i]);
+      uniqArr.push(arr[i]);
     }
   }
   cb(uniqArr);
@@ -134,9 +134,9 @@ uniq(names, function(uniqArr){
 
 
     //Code Here for each
-    var each = function(names, cb) {
-      for (var i = 0; i < names.length; i++) {
-        cb(names[i], i);
+    var each = function(arr, cb) {
+      for (var i = 0; i < arr.length; i++) {
+        cb(arr[i], i);
       }
     }
 
@@ -178,9 +178,9 @@ var users = [
   },
 ];
 
-var getUserById = function(users, id, cb) {
-  for (i = 0; i < users.length; i++) {
-    if (id === users[i].id) {
+var getUserById = function(arr, id, cb) {
+  for (i = 0; i < arr.length; i++) {
+    if (id === arr[i].id) {
       cb(users[i]);
     }
   }
