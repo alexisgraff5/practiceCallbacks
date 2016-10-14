@@ -181,7 +181,7 @@ var users = [
 var getUserById = function(arr, id, cb) {
   for (i = 0; i < arr.length; i++) {
     if (id === arr[i].id) {
-      cb(users[i]);
+      cb(arr[i]);
     }
   }
 }
